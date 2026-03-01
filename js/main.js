@@ -14,7 +14,7 @@
    Cookie Consent (Top Banner)
    =============================== */
 
-const CONSENT_KEY = "tp_cookie_consent_v1";
+const CONSENT_KEY = "tp_cookie_consent_v2";
 
 function getConsent() {
   try {
