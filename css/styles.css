@@ -376,3 +376,9 @@ a{ color: inherit; }
   color: var(--muted);
 }
 .cookie-option input{ transform: translateY(1px); }
+
+/* Ensure hidden attribute always hides cookie UI */
+.cookie-banner[hidden],
+.cookie-modal[hidden] {
+  display: none !important;
+}
