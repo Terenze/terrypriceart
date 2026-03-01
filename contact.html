@@ -7,11 +7,75 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <div id="cookie-banner" class="cookie-banner-top" hidden>
-    <!-- cookie banner content here -->
+    <div id="cookie-banner" class="cookie-banner-top hidden">
+  <div class="cookie-inner">
+    <p class="cookie-text">
+      We use cookies to keep this site working, and (if you choose) to measure usage and improve it.
+      <a class="cookie-link" href="/cookies.html">Cookie policy</a>
+    </p>
+
+    <div class="cookie-actions">
+      <button class="btn btn-secondary"
+              id="cookie-settings-btn"
+              type="button"
+              aria-expanded="false"
+              aria-controls="cookie-settings">
+        Settings
+      </button>
+
+      <button class="btn btn-secondary"
+              id="cookie-reject-btn"
+              type="button">
+        Reject
+      </button>
+
+      <button class="btn"
+              id="cookie-accept-btn"
+              type="button">
+        Accept
+      </button>
+    </div>
+  </div>
+
+  <div id="cookie-settings" class="cookie-settings" hidden>
+    <div class="cookie-settings-inner">
+
+      <label class="cookie-option">
+        <input type="checkbox" checked disabled>
+        Strictly necessary (always on)
+      </label>
+
+      <label class="cookie-option">
+        <input id="cookie-analytics" type="checkbox">
+        Analytics
+      </label>
+
+      <label class="cookie-option">
+        <input id="cookie-marketing" type="checkbox">
+        Marketing (not currently used)
+      </label>
+
+      <div class="cookie-actions">
+        <button class="btn btn-secondary"
+                id="cookie-cancel-btn"
+                type="button">
+          Cancel
+        </button>
+
+        <button class="btn"
+                id="cookie-save-btn"
+                type="button">
+          Save choices
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
   </div>
 
   <a class="skip-link" href="#main">Skip to content</a>
+
 
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
