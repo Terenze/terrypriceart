@@ -31,7 +31,7 @@ document.addEventListener('click', (e) => {
   });
 });
 
-// --- Cookie consent (future-proof) ---
+// --- Cookie consent (top banner + inline settings) ---
 const CONSENT_KEY = "tp_cookie_consent_v1";
 
 function getConsent() {
@@ -43,31 +43,15 @@ function setConsent(consent) {
   localStorage.setItem(CONSENT_KEY, JSON.stringify(consent));
 }
 
-function loadGA4(measurementId) {
-  if (!measurementId || measurementId.startsWith("G-XXXX")) return;
-
-  // Load gtag script dynamically ONLY after consent
-  const s = document.createElement("script");
-  s.async = true;
-  s.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
-  document.head.appendChild(s);
-
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = function(){ window.dataLayer.push(arguments); };
-  window.gtag("js", new Date());
-  window.gtag("config", measurementId);
-}
-
+// Add your trackers here later.
+// Example: loadGA4("G-XXXX") ONLY after analytics consent.
 function applyConsent(consent) {
-  // Add other trackers here later in the same pattern
-  if (consent?.analytics === true) {
-    loadGA4("G-XXXXXXXXXX"); // <-- put your GA4 id here when ready
-  }
+  // Future: if (consent?.analytics) loadGA4("G-XXXXXXXXXX");
 }
 
 (function initCookieUI(){
   const banner = document.getElementById("cookie-banner");
-  const modal = document.getElementById("cookie-modal");
+  const settings = document.getElementById("cookie-settings");
 
   const acceptBtn = document.getElementById("cookie-accept-btn");
   const rejectBtn = document.getElementById("cookie-reject-btn");
@@ -78,60 +62,74 @@ function applyConsent(consent) {
   const analyticsToggle = document.getElementById("cookie-analytics");
   const marketingToggle = document.getElementById("cookie-marketing");
 
-  if (!banner || !modal) return;
+  if (!banner || !settings || !acceptBtn || !rejectBtn || !settingsBtn || !saveBtn || !cancelBtn || !analyticsToggle || !marketingToggle) {
+    // If any elements are missing on a page, fail safely (no banner)
+    return;
+  }
 
   const existing = getConsent();
   if (existing) {
     applyConsent(existing);
-    return; // don’t show banner again
-  }
-
-  // Show banner (default: no tracking)
-  banner.hidden = false;
-
-  function closeAll() {
+    // keep banner hidden if consent already recorded
     banner.hidden = true;
-    modal.hidden = true;
+    settings.hidden = true;
+    settingsBtn.setAttribute("aria-expanded", "false");
+    return;
   }
+
+  // Show banner (default: no optional cookies)
+  banner.hidden = false;
+  settings.hidden = true;
+  settingsBtn.setAttribute("aria-expanded", "false");
 
   function openSettings() {
-    // defaults off
-    analyticsToggle.checked = false;
-    marketingToggle.checked = false;
-    modal.hidden = false;
+    settings.hidden = false;
+    settingsBtn.setAttribute("aria-expanded", "true");
   }
 
-  acceptBtn?.addEventListener("click", () => {
+  function closeSettings() {
+    settings.hidden = true;
+    settingsBtn.setAttribute("aria-expanded", "false");
+  }
+
+  function closeBanner() {
+    banner.hidden = true;
+    settings.hidden = true;
+    settingsBtn.setAttribute("aria-expanded", "false");
+  }
+
+  settingsBtn.addEventListener("click", () => {
+    const expanded = settingsBtn.getAttribute("aria-expanded") === "true";
+    if (expanded) closeSettings();
+    else openSettings();
+  });
+
+  acceptBtn.addEventListener("click", () => {
     const consent = { necessary: true, analytics: true, marketing: false };
     setConsent(consent);
-    closeAll();
+    closeBanner();
     applyConsent(consent);
   });
 
-  rejectBtn?.addEventListener("click", () => {
+  rejectBtn.addEventListener("click", () => {
     const consent = { necessary: true, analytics: false, marketing: false };
     setConsent(consent);
-    closeAll();
+    closeBanner();
     applyConsent(consent);
   });
 
-  settingsBtn?.addEventListener("click", () => openSettings());
-
-  saveBtn?.addEventListener("click", () => {
+  saveBtn.addEventListener("click", () => {
     const consent = {
       necessary: true,
       analytics: !!analyticsToggle.checked,
       marketing: !!marketingToggle.checked
     };
     setConsent(consent);
-    closeAll();
+    closeBanner();
     applyConsent(consent);
   });
 
-  cancelBtn?.addEventListener("click", () => { modal.hidden = true; });
-
-  // Click outside modal closes it
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.hidden = true;
+  cancelBtn.addEventListener("click", () => {
+    closeSettings();
   });
 })();
