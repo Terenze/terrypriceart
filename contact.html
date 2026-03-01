@@ -4,9 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — Terry Price Art</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <div id="cookie-banner" class="cookie-banner-top" hidden>
+    <!-- cookie banner content here -->
+  </div>
+
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
@@ -54,46 +58,73 @@
       </p>
     </div>
   </footer>
-<div id="cookie-banner" class="cookie-banner" hidden>
+
+<div id="cookie-banner" class="cookie-banner-top" hidden>
   <div class="cookie-inner">
     <p class="cookie-text">
-      We use cookies to understand how the site is used and to improve it. You can accept analytics cookies or reject them.
+      We use cookies to keep this site working, and (if you choose) to measure usage and improve it.
       <a class="cookie-link" href="/cookies.html">Cookie policy</a>
     </p>
 
     <div class="cookie-actions">
-      <button class="btn btn-secondary" id="cookie-settings-btn" type="button">Settings</button>
-      <button class="btn btn-secondary" id="cookie-reject-btn" type="button">Reject</button>
-      <button class="btn" id="cookie-accept-btn" type="button">Accept</button>
+      <button class="btn btn-secondary"
+              id="cookie-settings-btn"
+              type="button"
+              aria-expanded="false"
+              aria-controls="cookie-settings">
+        Settings
+      </button>
+
+      <button class="btn btn-secondary"
+              id="cookie-reject-btn"
+              type="button">
+        Reject
+      </button>
+
+      <button class="btn"
+              id="cookie-accept-btn"
+              type="button">
+        Accept
+      </button>
+    </div>
+  </div>
+
+  <div id="cookie-settings" class="cookie-settings" hidden>
+    <div class="cookie-settings-inner">
+
+      <label class="cookie-option">
+        <input type="checkbox" checked disabled>
+        Strictly necessary (always on)
+      </label>
+
+      <label class="cookie-option">
+        <input id="cookie-analytics" type="checkbox">
+        Analytics
+      </label>
+
+      <label class="cookie-option">
+        <input id="cookie-marketing" type="checkbox">
+        Marketing (not currently used)
+      </label>
+
+      <div class="cookie-actions">
+        <button class="btn btn-secondary"
+                id="cookie-cancel-btn"
+                type="button">
+          Cancel
+        </button>
+
+        <button class="btn"
+                id="cookie-save-btn"
+                type="button">
+          Save choices
+        </button>
+      </div>
+
     </div>
   </div>
 </div>
 
-<div id="cookie-modal" class="cookie-modal" hidden aria-modal="true" role="dialog" aria-labelledby="cookie-title">
-  <div class="cookie-modal-inner">
-    <h2 id="cookie-title" class="panel-title">Cookie settings</h2>
-
-    <label class="cookie-option">
-      <input type="checkbox" checked disabled>
-      Strictly necessary (always on)
-    </label>
-
-    <label class="cookie-option">
-      <input id="cookie-analytics" type="checkbox">
-      Analytics (helps us understand traffic)
-    </label>
-
-    <label class="cookie-option">
-      <input id="cookie-marketing" type="checkbox">
-      Marketing (only if we ever add it)
-    </label>
-
-    <div class="cookie-actions">
-      <button class="btn btn-secondary" id="cookie-cancel-btn" type="button">Cancel</button>
-      <button class="btn" id="cookie-save-btn" type="button">Save choices</button>
-    </div>
-  </div>
-</div>
   <script src="js/main.js"></script>
 </body>
 </html>
