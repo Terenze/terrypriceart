@@ -132,3 +132,31 @@ function applyConsent(consent) {
   }
 
 })();
+
+
+
+
+document.querySelectorAll('.artwork-thumbs .thumb').forEach(link => {
+
+  link.addEventListener('click', function (e) {
+
+    e.preventDefault()
+
+    const mainImage = document.getElementById('main-artwork-image')
+    const newSrc = this.dataset.full
+    const newAlt = this.dataset.alt
+
+    if (!mainImage || !newSrc) return
+
+    mainImage.src = newSrc
+    mainImage.alt = newAlt || ''
+
+    document.querySelectorAll('.artwork-thumbs .thumb').forEach(item => {
+      item.classList.remove('is-active')
+    })
+
+    this.classList.add('is-active')
+
+  })
+
+})

@@ -1,7 +1,7 @@
 html { font-size: 100%; } /* 16px baseline */
 
 :root{
-  --max: 67.5rem;          /* 1080px */
+  --max: 72rem;          /* 1080px */
   --text: #111;
   --muted: #666;
   --bg: #fff;
@@ -15,12 +15,11 @@ html { font-size: 100%; } /* 16px baseline */
   --space-5: 3rem;         /* 48px */
 }
 
-*{ box-sizing: border-box; }
 
 body{
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;         /* 16px */
+  font-size: 1.1rem;         /* 16px */
   line-height: 1.6;
   color: var(--text);
   background: var(--bg);
@@ -31,7 +30,8 @@ a{ color: inherit; }
 .container{
   max-width: var(--max);
   margin: 0 auto;
-  padding: var(--space-3);
+  padding-left: var(--space-3);
+  padding-right: var(--space-3);
 }
 
 .skip-link{
@@ -60,6 +60,7 @@ a{ color: inherit; }
   position: sticky;
   top: 0;
   z-index: 10;
+  background-color: #f5f5f5;
 }
 
 .nav{
@@ -96,8 +97,9 @@ a{ color: inherit; }
 
 /* Intro */
 .intro{
+  text-align: center;
   padding-top: var(--space-3);
-  padding-bottom: var(--space-2);
+  padding-bottom: var(--space-4);
 }
 .intro-title{
   margin: 0 0 var(--space-1);
@@ -108,7 +110,7 @@ a{ color: inherit; }
 .intro-text{
   margin: 0;
   color: var(--muted);
-  max-width: 65ch;
+  text-align: center;
 }
 
 /* Home grid — forced 3 columns */
@@ -130,7 +132,6 @@ a{ color: inherit; }
 .card{
   text-decoration: none;
   border: 1px solid var(--line);
-  border-radius: 0.75rem;
   overflow: hidden;
   background: #fff;
   transition: transform .12s ease, box-shadow .12s ease;
@@ -177,7 +178,23 @@ a{ color: inherit; }
 }
 .breadcrumb a:hover{ text-decoration: underline; }
 
-/* Artwork page layout: 1/3 text left, 2/3 image right */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+
+
+/* Single Artwork page layout: 1/3 text left, 2/3 image right */
 .artwork{
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -189,7 +206,6 @@ a{ color: inherit; }
   width: 100%;
   height: auto;
   border: 1px solid var(--line);
-  border-radius: 0.75rem;
   background: #f5f5f5;
 }
 .artwork-title{
@@ -224,6 +240,115 @@ a{ color: inherit; }
 }
 
 .artwork-cta{ margin-top: var(--space-3); }
+
+.artwork-thumbs{
+  display:flex;
+  gap:1rem;
+  margin-top:1.5rem;
+  flex-wrap:wrap;
+}
+
+.artwork-price{
+  font-size:1.75rem;
+  font-weight:400;
+  margin-top:1.5rem;
+  margin-bottom:0.75rem;
+  letter-spacing:0.02em;
+}
+
+.thumb{
+  width:6.5rem;
+  box-sizing:border-box;
+  border:2px solid var(--line); 
+  display:inline-flex;
+  flex-direction:column;
+  gap:0.5rem;
+  background:#fff;
+  text-decoration:none;
+  color:inherit;
+}
+
+.thumb.is-active{
+  border-color:#0b0c0c;
+}
+
+.thumb img{
+  width:100%;
+  aspect-ratio:3 / 2;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  border:none;
+}
+
+.thumb-caption{
+  display:block;
+  padding:0 0.5rem 0.5rem;
+  font-size:0.875rem;
+  line-height:1.2;
+  color:var(--muted);
+}
+
+.thumb:focus{
+  outline:none;
+}
+
+.thumb:focus-visible{
+  outline:2px solid #0b0c0c;
+  outline-offset:2px;
+}
+
+
+/* Multi-artwork page layout */
+.work-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 3rem;
+  row-gap: 2.25rem;
+  margin-top: 2rem;
+}
+
+.work-card{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  background: #fff;
+}
+
+.work-card img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.work-meta{
+  padding: 0.9rem 1rem;
+}
+
+.work-title{
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.work-sub{
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 48rem){
+  .work-grid{ grid-template-columns: 1fr; }
+}
+
+
+
+
+
+
+
 
 /* Buttons */
 .btn{
@@ -311,6 +436,7 @@ a{ color: inherit; }
 .footer-links a{
   color: var(--muted);
   text-decoration: none;
+  padding-left: 1.5rem;
 }
 .footer-links a:hover{ text-decoration: underline; }
 
@@ -405,3 +531,138 @@ a{ color: inherit; }
   display: none !important;
 }
 
+@media (max-width: 64rem){
+  .work-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 40rem){
+  .work-grid{ grid-template-columns: 1fr; }
+}
+
+
+
+@media (max-width: 29rem) {
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+  }
+
+}
+
+
+/* Artwork display refinements */
+
+.artwork-media{
+  padding:1rem;
+}
+
+.artwork-media img{
+  display:block;
+  margin:0 auto;
+  max-height:70vh;
+  width:auto;
+  max-width:100%;
+  object-fit:contain;
+}
+
+
+/* ==============================
+   Homepage layouts
+   ============================== */
+
+.home-intro{
+  text-align:center;
+  max-width:50rem;
+  margin:0 auto 1.5rem;
+}
+
+/* Homepage intro paragraph */
+
+.home-intro p{
+  font-size:1.2rem;
+  line-height:1.5;
+  max-width:50rem;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.home-cta{
+  margin-top:1rem;
+}
+
+.home-feature{
+  margin:1rem auto 0;
+  text-align:center;
+}
+
+.home-feature img{
+  display:block;
+  margin:0 auto;
+  max-height:70vh;
+  width:auto;
+  max-width:100%;
+  object-fit:contain;
+
+  background:#fff;
+  padding:0.4rem;
+  border:1px solid #e8e8e8;
+}
+
+/* Homepage artwork caption */
+
+.home-art-caption{
+  text-align:center;
+  margin:1.2rem 0 0.35rem;
+  font-size:0.95rem;
+  color:var(--muted);
+}
+
+.home-art-caption{
+  text-align:center;
+  display:block;
+  width:100%;
+  margin:1.2rem auto 0.35rem;
+  font-size:0.95rem;
+  color:var(--muted);
+}
+
+.home-art-title{
+  color:var(--text);
+}
+
+/* --------------------------------
+   Portrait artwork layout (Option B)
+-------------------------------- */
+
+.home--portrait .home-split{
+  display:grid;
+  grid-template-columns: 2fr 3fr;
+  gap:2rem;
+  align-items:start;
+  margin-top:2rem;
+}
+
+.home-copy{
+  max-width:32rem;
+}
+
+
+/* --------------------------------
+   Responsive behaviour
+-------------------------------- */
+
+@media (max-width:48rem){
+
+  .home--featured-split .home-split{
+    grid-template-columns:1fr;
+  }
+
+}
