@@ -666,3 +666,16 @@ main {
   }
 
 }
+
+
+.placeholder-image {
+text-align: center;
+margin: 2rem 0;
+}
+
+.placeholder-image img {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
