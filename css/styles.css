@@ -319,10 +319,13 @@ main {
   background: #fff;
 }
 
-.work-card img{
+.work-card img {
   width: 100%;
+  aspect-ratio: 3 / 2;
   height: auto;
   display: block;
+  object-fit: cover;
+  object-position: center;
 }
 
 .work-meta{
