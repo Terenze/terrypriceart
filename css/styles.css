@@ -166,6 +166,8 @@ a{ color: inherit; }
   font-size: 0.9rem;
 }
 
+
+
 /* Breadcrumb */
 .breadcrumb{
   padding-top: var(--space-2);
@@ -536,6 +538,25 @@ main {
   padding-left: 1.5rem;
 }
 .footer-links a:hover{ text-decoration: underline; }
+
+/* Body and footer links */
+main a:not(.btn):not(.card):not(.work-card):not(.thumb),
+.site-footer a {
+  text-decoration: underline;
+  text-decoration-thickness: 0.0625rem;
+  text-underline-offset: 0.18em;
+}
+
+main a:not(.btn):not(.card):not(.work-card):not(.thumb):hover,
+.site-footer a:hover {
+  text-decoration-thickness: 0.125rem;
+}
+
+main a:not(.btn):not(.card):not(.work-card):not(.thumb):focus-visible,
+.site-footer a:focus-visible {
+  text-decoration-thickness: 0.125rem;
+}
+
 
 
 .cookie-banner-top {
