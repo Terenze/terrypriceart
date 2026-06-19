@@ -8,15 +8,15 @@
   <meta name="description" content="Artwork details, availability, and purchase options." />
   <link rel="stylesheet" href="css/styles.css" />
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMVWMBTBKT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMVWMBTBKT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-ZMVWMBTBKT');
-</script>
+    gtag('config', 'G-ZMVWMBTBKT');
+  </script>
 </head>
 
 <body>
@@ -32,10 +32,10 @@
       </p>
 
       <div class="cookie-actions">
-        <button class="btn btn-secondary" id="cookie-settings-btn" type="button" aria-expanded="false"
+        <!--   <button class="btn btn-secondary" id="cookie-settings-btn" type="button" aria-expanded="false"
           aria-controls="cookie-settings">
           Settings
-        </button>
+        </button> -->
 
         <button class="btn btn-secondary" id="cookie-reject-btn" type="button">
           Reject
@@ -114,51 +114,41 @@
             Using a limted colour palette, this expressive image emerges from making marks that are lighter than the
             paper, rather like a lion emerging from camouflage.
 
-          <p class="artwork-price">£165</p>
+            <!--    <p class="artwork-price">£165</p> -->
 
         </div>
 
-        <div class="artwork-cta">
-          <!-- OPTION 1: Stripe Payment Link (prints) -->
+        <!--   <div class="artwork-cta">
+           OPTION 1: Stripe Payment Link (prints) 
           <a class="btn" href="#" data-analytics="buy_print" data-artwork="Lion's head in soft pastel"
             data-stripe-link="https://buy.stripe.com/your-link-here" id="buyPrintBtn">
             Buy original artwork
-          </a>
-
-
+          </a> 
 
           <p class="small-note">
             Supplied in a 12"x10" black frame with a black mount.
-          </p>
+          </p> -->
 
 
-          <div class="artwork-thumbs" aria-label="Artwork image options">
+        <div class="artwork-thumbs" aria-label="Artwork image options">
 
-            <a href="/images/lion.jpg" class="thumb is-active" data-full="/images/lion.jpg" data-alt="Lion painting">
-              <img src="/images/lion.jpg" alt="Lion painting thumbnail">
-              <span class="thumb-caption">Artwork</span>
-            </a>
+          <a href="/images/lion.jpg" class="thumb is-active" data-full="/images/lion.jpg" data-alt="Lion painting">
+            <img src="/images/lion.jpg" alt="Lion painting thumbnail">
+            <span class="thumb-caption">Artwork</span>
+          </a>
 
-            <a href="/images/sailing-boats.jpg" class="thumb" data-full="/images/sailing-boats.jpg"
-              data-alt="Lion painting framed">
-              <img src="/images/sailing-boats.jpg" alt="Lion painting framed thumbnail">
-              <span class="thumb-caption">Framed</span>
-            </a>
-
-          </div>
-
-
+          <a href="/images/sailing-boats.jpg" class="thumb" data-full="/images/sailing-boats.jpg"
+            data-alt="Lion painting framed">
+            <img src="/images/sailing-boats.jpg" alt="Lion painting framed thumbnail">
+            <span class="thumb-caption">Framed</span>
+          </a>
 
         </div>
-
-
-
-
-
       </div>
 
       <div class="artwork-media">
-        <img id="main-artwork-image" src="images/lion.jpg" alt="A lion's head drawing in coloured pastel on black cartridge paper" />
+        <img id="main-artwork-image" src="images/lion.jpg"
+          alt="A lion's head drawing in coloured pastel on black cartridge paper" />
       </div>
     </article>
   </main>
@@ -173,60 +163,6 @@
     </div>
   </footer>
 
-  <div id="cookie-banner" class="cookie-banner-top" hidden>
-    <div class="cookie-inner">
-      <p class="cookie-text">
-        We use cookies to keep this site working, and (if you choose) to measure usage and improve it.
-        <a class="cookie-link" href="/cookies.html">Cookie policy</a>
-      </p>
-
-      <div class="cookie-actions">
-        <button class="btn btn-secondary" id="cookie-settings-btn" type="button" aria-expanded="false"
-          aria-controls="cookie-settings">
-          Settings
-        </button>
-
-        <button class="btn btn-secondary" id="cookie-reject-btn" type="button">
-          Reject
-        </button>
-
-        <button class="btn" id="cookie-accept-btn" type="button">
-          Accept
-        </button>
-      </div>
-    </div>
-
-    <div id="cookie-settings" class="cookie-settings" hidden>
-      <div class="cookie-settings-inner">
-
-        <label class="cookie-option">
-          <input type="checkbox" checked disabled>
-          Strictly necessary (always on)
-        </label>
-
-        <label class="cookie-option">
-          <input id="cookie-analytics" type="checkbox">
-          Analytics
-        </label>
-
-        <label class="cookie-option">
-          <input id="cookie-marketing" type="checkbox">
-          Marketing (not currently used)
-        </label>
-
-        <div class="cookie-actions">
-          <button class="btn btn-secondary" id="cookie-cancel-btn" type="button">
-            Cancel
-          </button>
-
-          <button class="btn" id="cookie-save-btn" type="button">
-            Save choices
-          </button>
-        </div>
-
-      </div>
-    </div>
-  </div>
 
   <script src="js/main.js"></script>
 </body>

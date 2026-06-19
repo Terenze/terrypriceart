@@ -8,15 +8,15 @@
   <meta name="description" content="Artwork details, availability, and purchase options." />
   <link rel="stylesheet" href="css/styles.css" />
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMVWMBTBKT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMVWMBTBKT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-ZMVWMBTBKT');
-</script>
+    gtag('config', 'G-ZMVWMBTBKT');
+  </script>
 </head>
 
 <body>
@@ -32,10 +32,10 @@
       </p>
 
       <div class="cookie-actions">
-        <button class="btn btn-secondary" id="cookie-settings-btn" type="button" aria-expanded="false"
+     <!--   <button class="btn btn-secondary" id="cookie-settings-btn" type="button" aria-expanded="false"
           aria-controls="cookie-settings">
           Settings
-        </button>
+        </button> -->
 
         <button class="btn btn-secondary" id="cookie-reject-btn" type="button">
           Reject
@@ -44,37 +44,6 @@
         <button class="btn" id="cookie-accept-btn" type="button">
           Accept
         </button>
-      </div>
-    </div>
-
-    <div id="cookie-settings" class="cookie-settings" hidden>
-      <div class="cookie-settings-inner">
-
-        <label class="cookie-option">
-          <input type="checkbox" checked disabled>
-          Strictly necessary (always on)
-        </label>
-
-        <label class="cookie-option">
-          <input id="cookie-analytics" type="checkbox">
-          Analytics
-        </label>
-
-        <label class="cookie-option">
-          <input id="cookie-marketing" type="checkbox">
-          Marketing (not currently used)
-        </label>
-
-        <div class="cookie-actions">
-          <button class="btn btn-secondary" id="cookie-cancel-btn" type="button">
-            Cancel
-          </button>
-
-          <button class="btn" id="cookie-save-btn" type="button">
-            Save choices
-          </button>
-        </div>
-
       </div>
     </div>
   </div>
@@ -111,53 +80,52 @@
 
         <div class="artwork-copy">
           <p>
-           A charcoal study capturing the weight and size of a sprawling ancient tree.
-
-          <p class="artwork-price">£55</p>
+            A charcoal study capturing the weight and size of a sprawling ancient tree.
+          </p>
+          <!-- <p class="artwork-price">£55</p> -->
 
         </div>
 
-        <div class="artwork-cta">
-          <!-- OPTION 1: Stripe Payment Link (prints) -->
-          <a class="btn" href="#" data-analytics="buy_print" data-artwork="Artwork Title"
-            data-stripe-link="https://buy.stripe.com/your-link-here" id="buyPrintBtn">
-            Buy original artwork
+      <!--
+<div class="artwork-cta">
+  <a
+    class="btn"
+    href="#"
+    data-analytics="buy_print"
+    data-artwork="Ancient tree"
+    data-stripe-link="https://buy.stripe.com/your-link-here"
+    id="buyPrintBtn"
+  >
+    Buy original artwork
+  </a>
+
+  <p class="small-note">
+    Supplied in a 12"x10" black mount.
+  </p>
+</div>
+-->
+
+
+        <div class="artwork-thumbs" aria-label="Artwork image options">
+
+          <a href="/images/ancient-tree.jpg" class="thumb is-active" data-full="/images/ancient-tree.jpg"
+            data-alt="Ancient tree drawing">
+            <img src="/images/ancient-tree.jpg" alt="Ancient tree drawing thumbnail">
+            <span class="thumb-caption">Artwork</span>
           </a>
 
+          <a href="/images/ancient-tree.jpg" class="thumb" data-full="/images/ancient-tree.jpg"
+            data-alt="Ancient tree drawing mounted">
+            <img src="/images/ancient-tree.jpg" alt="Ancient tree drawing mounted thumbnail">
+            <span class="thumb-caption">Mounted</span>
+          </a>
 
-
-          <p class="small-note">
-            Supplied in a 12"x10" black mount.
-          </p>
-
-
-          <div class="artwork-thumbs" aria-label="Artwork image options">
-
-            <a href="/images/ancient-tree.jpg" class="thumb is-active" data-full="/images/ancient-tree.jpg" data-alt="Ancient tree drawing">
-              <img src="/images/ancient-tree.jpg" alt="Ancient tree drawing thumbnail">
-              <span class="thumb-caption">Artwork</span>
-            </a>
-
-            <a href="/images/ancient-tree.jpg" class="thumb" data-full="/images/ancient-tree.jpg"
-              data-alt="Ancient tree drawing mounted">
-              <img src="/images/ancient-tree.jpg" alt="Ancient tree drawing mounted thumbnail">
-              <span class="thumb-caption">Mounted</span>
-            </a>
-
-          </div>
-
-
-
-        </div>
-
-
-
-
-
+      </div>
       </div>
 
       <div class="artwork-media">
-        <img id="main-artwork-image" src="images/ancient-tree.jpg" alt="Charcoal drawing of an ancient tree on newsprint paper" />
+        <img id="main-artwork-image" src="images/ancient-tree.jpg"
+          alt="Charcoal drawing of an ancient tree on newsprint paper" />
       </div>
     </article>
   </main>
@@ -172,60 +140,6 @@
     </div>
   </footer>
 
-  <div id="cookie-banner" class="cookie-banner-top" hidden>
-    <div class="cookie-inner">
-      <p class="cookie-text">
-        We use cookies to keep this site working, and (if you choose) to measure usage and improve it.
-        <a class="cookie-link" href="/cookies.html">Cookie policy</a>
-      </p>
-
-      <div class="cookie-actions">
-        <button class="btn btn-secondary" id="cookie-settings-btn" type="button" aria-expanded="false"
-          aria-controls="cookie-settings">
-          Settings
-        </button>
-
-        <button class="btn btn-secondary" id="cookie-reject-btn" type="button">
-          Reject
-        </button>
-
-        <button class="btn" id="cookie-accept-btn" type="button">
-          Accept
-        </button>
-      </div>
-    </div>
-
-    <div id="cookie-settings" class="cookie-settings" hidden>
-      <div class="cookie-settings-inner">
-
-        <label class="cookie-option">
-          <input type="checkbox" checked disabled>
-          Strictly necessary (always on)
-        </label>
-
-        <label class="cookie-option">
-          <input id="cookie-analytics" type="checkbox">
-          Analytics
-        </label>
-
-        <label class="cookie-option">
-          <input id="cookie-marketing" type="checkbox">
-          Marketing (not currently used)
-        </label>
-
-        <div class="cookie-actions">
-          <button class="btn btn-secondary" id="cookie-cancel-btn" type="button">
-            Cancel
-          </button>
-
-          <button class="btn" id="cookie-save-btn" type="button">
-            Save choices
-          </button>
-        </div>
-
-      </div>
-    </div>
-  </div>
 
   <script src="js/main.js"></script>
 </body>

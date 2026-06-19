@@ -8,15 +8,15 @@
   <meta name="description" content="Artwork details, availability, and purchase options." />
   <link rel="stylesheet" href="css/styles.css" />
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMVWMBTBKT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMVWMBTBKT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-ZMVWMBTBKT');
-</script>
+    gtag('config', 'G-ZMVWMBTBKT');
+  </script>
 
 </head>
 
@@ -33,10 +33,10 @@
       </p>
 
       <div class="cookie-actions">
-        <button class="btn btn-secondary" id="cookie-settings-btn" type="button" aria-expanded="false"
+        <!--    <button class="btn btn-secondary" id="cookie-settings-btn" type="button" aria-expanded="false"
           aria-controls="cookie-settings">
           Settings
-        </button>
+        </button> -->
 
         <button class="btn btn-secondary" id="cookie-reject-btn" type="button">
           Reject
@@ -112,49 +112,41 @@
 
         <div class="artwork-copy">
           <p>
-            Working in reverse (white on black) to create this confidently perched graphic owl means I only got one go to get it right. </p>
-            <p>The black mount on a black frame emphasises the majesty of the while owl.</p>
+            Working in reverse (white on black) to create this confidently perched graphic owl means I only got one go
+            to get it right. </p>
+          <p>The black mount on a black frame emphasises the majesty of the while owl.</p>
 
-          <p class="artwork-price">£195</p>
+          <!--    <p class="artwork-price">£195</p> -->
 
         </div>
 
-        <div class="artwork-cta">
-          <!-- OPTION 1: Stripe Payment Link (prints) -->
+        <!--      <div class="artwork-cta">
+           OPTION 1: Stripe Payment Link (prints) 
           <a class="btn" href="#" data-analytics="buy_print" data-artwork="Perched owl"
             data-stripe-link="https://buy.stripe.com/your-link-here" id="buyPrintBtn">
             Buy original artwork
           </a>
 
 
-
           <p class="small-note">
             Supplied in a 12"x10" black frame with a black mount.
-          </p>
+          </p> -->
 
 
-          <div class="artwork-thumbs" aria-label="Artwork image options">
+        <div class="artwork-thumbs" aria-label="Artwork image options">
 
-            <a href="/images/owl.jpg" class="thumb is-active" data-full="/images/owl.jpg" data-alt="Perched owl in soft pastel">
-              <img src="/images/owl.jpg" alt="Owl perched on a fence post thumbnail">
-              <span class="thumb-caption">Artwork</span>
-            </a>
+          <a href="/images/owl.jpg" class="thumb is-active" data-full="/images/owl.jpg"
+            data-alt="Perched owl in soft pastel">
+            <img src="/images/owl.jpg" alt="Owl perched on a fence post thumbnail">
+            <span class="thumb-caption">Artwork</span>
+          </a>
 
-            <a href="/images/owl.jpg" class="thumb" data-full="/images/owl.jpg"
-              data-alt="Perched owl drawing framed">
-              <img src="/images/owl.jpg" alt="Perched owl drawing framed thumbnail">
-              <span class="thumb-caption">Framed</span>
-            </a>
-
-          </div>
-
-
+          <a href="/images/owl.jpg" class="thumb" data-full="/images/owl.jpg" data-alt="Perched owl drawing framed">
+            <img src="/images/owl.jpg" alt="Perched owl drawing framed thumbnail">
+            <span class="thumb-caption">Framed</span>
+          </a>
 
         </div>
-
-
-
-
 
       </div>
 
@@ -173,61 +165,6 @@
       </p>
     </div>
   </footer>
-
-  <div id="cookie-banner" class="cookie-banner-top" hidden>
-    <div class="cookie-inner">
-      <p class="cookie-text">
-        We use cookies to keep this site working, and (if you choose) to measure usage and improve it.
-        <a class="cookie-link" href="/cookies.html">Cookie policy</a>
-      </p>
-
-      <div class="cookie-actions">
-        <button class="btn btn-secondary" id="cookie-settings-btn" type="button" aria-expanded="false"
-          aria-controls="cookie-settings">
-          Settings
-        </button>
-
-        <button class="btn btn-secondary" id="cookie-reject-btn" type="button">
-          Reject
-        </button>
-
-        <button class="btn" id="cookie-accept-btn" type="button">
-          Accept
-        </button>
-      </div>
-    </div>
-
-    <div id="cookie-settings" class="cookie-settings" hidden>
-      <div class="cookie-settings-inner">
-
-        <label class="cookie-option">
-          <input type="checkbox" checked disabled>
-          Strictly necessary (always on)
-        </label>
-
-        <label class="cookie-option">
-          <input id="cookie-analytics" type="checkbox">
-          Analytics
-        </label>
-
-        <label class="cookie-option">
-          <input id="cookie-marketing" type="checkbox">
-          Marketing (not currently used)
-        </label>
-
-        <div class="cookie-actions">
-          <button class="btn btn-secondary" id="cookie-cancel-btn" type="button">
-            Cancel
-          </button>
-
-          <button class="btn" id="cookie-save-btn" type="button">
-            Save choices
-          </button>
-        </div>
-
-      </div>
-    </div>
-  </div>
 
   <script src="js/main.js"></script>
 </body>
